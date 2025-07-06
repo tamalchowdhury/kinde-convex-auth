@@ -1,12 +1,13 @@
-import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react"
+import Footer from "./Footer"
 
 export default function LoggedOut() {
-  const { login, register } = useKindeAuth();
+  const { login, register } = useKindeAuth()
   return (
     <>
       <header>
         <nav className="nav container">
-          <h1 className="text-display-3">Kinde Convex Auth</h1>
+          <h1 className="text-display-3">Kinde & Convex</h1>
           <div>
             <button className="btn btn-ghost sign-in-btn" onClick={login}>
               Sign in
@@ -37,22 +38,7 @@ export default function LoggedOut() {
           </div>
         </div>
       </main>
-
-      <footer className="footer">
-        <div className="container">
-          <strong className="text-heading-2">KindeAuth&Convex</strong>
-          <p className="footer-tagline text-body-3">
-            Visit our{" "}
-            <a className="link" href="https://kinde.com/docs">
-              help center
-            </a>
-          </p>
-
-          <small className="text-subtle">
-            © 2025 KindeAuth, Inc. All rights reserved
-          </small>
-        </div>
-      </footer>
+      <Footer />
     </>
-  );
+  )
 }

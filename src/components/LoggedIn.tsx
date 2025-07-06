@@ -9,6 +9,7 @@ import {
 import { api } from "../../convex/_generated/api"
 import { useCurrentUser } from "../hooks/useCurrentUser"
 import Tasks from "./Tasks"
+import Footer from "./Footer"
 
 export default function LoggedIn() {
   const { user, logout } = useKindeAuth()
@@ -27,11 +28,11 @@ export default function LoggedIn() {
     <>
       <header>
         <nav className="nav container">
-          <h1 className="text-display-3">KindeAuth & Convex</h1>
+          <h1 className="text-display-3">Kinde & Convex</h1>
           <div className="profile-blob">
             <div className="avatar">
               {user?.given_name?.[0]}
-              {user?.family_name?.[1]}
+              {user?.family_name?.[0]}
             </div>
             <div>
               <p className="text-heading-2">
@@ -71,22 +72,7 @@ export default function LoggedIn() {
           </section>
         </div>
       </main>
-
-      <footer className="footer">
-        <div className="container">
-          <strong className="text-heading-2">KindeAuth & Convex</strong>
-          <p className="footer-tagline text-body-3">
-            Visit our{" "}
-            <a className="link" href="https://kinde.com/docs">
-              help center
-            </a>
-          </p>
-
-          <small className="text-subtle">
-            © 2025 KindeAuth, Inc. All rights reserved
-          </small>
-        </div>
-      </footer>
+      <Footer />
     </>
   )
 }
